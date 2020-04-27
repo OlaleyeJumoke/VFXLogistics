@@ -37,7 +37,7 @@ class _SignUpState extends State<SignUp> {
           Container(width: 200.0, height: 140.0,
             padding: EdgeInsets.only(top: 36.0, bottom: 16.0),
             child: Image.asset("assets/Logo.png",),),
-          Text("Create an account", style:Theme.of(context).textTheme.display2.apply(color: Colors.black), textAlign: TextAlign.center,),
+          Text("Create an account", style:Theme.of(context).textTheme.display2.apply(color: Color(0xFF333333)), textAlign: TextAlign.center,),
           SizedBox(height: 16.0,),
           TextFieldDesign(fullName,TextInputType.text,false,"Full Name"),
           TextFieldDesign(email,TextInputType.text,false,"Email"),
