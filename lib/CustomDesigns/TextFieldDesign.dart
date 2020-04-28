@@ -29,19 +29,7 @@ class TextFieldDesign extends StatelessWidget{
               contentPadding: EdgeInsets.all(4.0),
               fillColor: Colors.white,
               border: InputBorder.none
-              /*border: new OutlineInputBorder(
-              borderRadius:
-              const BorderRadius.all(const Radius.circular(8.0)),
-      borderSide: new BorderSide(
-          color: Theme
-              .of(context)
-              .highlightColor,
-          width: 2.0,
-          style: BorderStyle.solid),
-
-      //gapPadding: 4.0,
-    )*/),
-
+             ),
         ),
     );
   }

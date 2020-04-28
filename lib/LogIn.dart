@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vfxlogistics/Designs/TextFieldDesign.dart';
+import 'package:vfxlogistics/ForgetPassword.dart';
 import 'package:vfxlogistics/SignUp.dart';
+
+import 'CustomDesigns/Button.dart';
+import 'CustomDesigns/TextFieldDesign.dart';
 
 class LogIn extends StatefulWidget {
   @override
@@ -69,7 +72,7 @@ class _LogInState extends State<LogIn> {
                         .of(context)
                         .textTheme
                         .display2
-                        .apply(color: Color(0xff191919)),
+                        .apply(color:  const Color(0xff191919)),
                     textAlign: TextAlign.center,),
                   SizedBox(height: 12.0),
                   TextFieldDesign(username, TextInputType.text, true,
@@ -82,12 +85,16 @@ class _LogInState extends State<LogIn> {
                     child: Row(crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(child: Text("Forget password?",
-                            style: Theme
-                                .of(context)
-                                .textTheme
-                                .subhead
-                                .apply(color: Colors.black,),)),
+                          Expanded(child: GestureDetector(onTap: (){
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ForgetPassword()));
+                          },
+                            child: Text("Forget password?",
+                              style: Theme
+                                  .of(context)
+                                  .textTheme
+                                  .subhead
+                                  .apply(color: Colors.black,),),
+                          )),
                           GestureDetector(onTap: (){
                             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignUp()));
                           },
@@ -102,25 +109,7 @@ class _LogInState extends State<LogIn> {
                         ]),
                   ),
                   SizedBox(height: 24.0,),
-                  Container(
-                    margin: EdgeInsets.only(
-                        left: 8.0, right: 8.0, top: 12.0, bottom: 12.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      boxShadow: [
-                        BoxShadow(color: Colors.black45, blurRadius: 4,
-                            spreadRadius: 2.0, offset: Offset(0, 1))
-                      ],
-                      color: Theme
-                          .of(context)
-                          .primaryColor,),
-                    child: FlatButton(onPressed: null,
-                      child: Text("CREATE", style: Theme
-                          .of(context)
-                          .textTheme
-                          .display4
-                          .apply(color: Colors.white),),),
-                  ),
+                  Button("CREATE", (){}),
                 ],
               ),
             ),

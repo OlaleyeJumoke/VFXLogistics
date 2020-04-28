@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vfxlogistics/LogIn.dart';
+import 'package:vfxlogistics/ForgetPassword.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
               subhead: TextStyle(fontSize: 12,  fontFamily: 'OpenSans',fontWeight: FontWeight.bold)
           ),
       ),
-      home: LogIn(),
+      home: ForgetPassword(),
     );
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vfxlogistics/Designs/TextFieldDesign.dart';
 import 'package:vfxlogistics/LogIn.dart';
+
+import 'CustomDesigns/Button.dart';
+import 'CustomDesigns/TextFieldDesign.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -46,13 +48,14 @@ class _SignUpState extends State<SignUp> {
           TextFieldDesign(password,TextInputType.text,true,"Password"),
           TextFieldDesign(confirmPassword,TextInputType.text,true,"Confirm Password"),
           SizedBox(height: 24.0,),
-          Container(
+          Button("CREATE", (){}),
+          /*Container(
             margin: EdgeInsets.only(left: 8.0, right: 8.0),
             decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8.0)),
               color: Theme.of(context).primaryColor,),
             child: FlatButton(onPressed: null,
                   child: Text("CREATE", style: Theme.of(context).textTheme.display4.apply(color: Colors.white),),),
-          ),
+          ),*/
           SizedBox(height: 16.0,),
           Row(crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
