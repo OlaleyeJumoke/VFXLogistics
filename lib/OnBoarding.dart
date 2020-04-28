@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import 'package:intro_slider/dot_animation_enum.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
+import 'package:vfxlogistics/LogIn.dart';
 import 'package:vfxlogistics/SignUp.dart';
 
 
@@ -56,7 +57,7 @@ class _OnBoardingState extends State<OnBoarding> {
           margin: EdgeInsets.only(left: 8.0, right: 8.0),
           decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4.0)),
             color: Theme.of(context).primaryColor,),
-          child: FlatButton(onPressed: null,
+          child: FlatButton( onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LogIn()));},
             child: Text("LOGIN", style: Theme.of(context).textTheme.display4.apply(color: Colors.white),),),
         ),
         SizedBox(height: 4.0,),
@@ -136,9 +137,5 @@ class _OnBoardingState extends State<OnBoarding> {
           ],
         ),
     );
-         // signInAndSignUpButtons(),
-        //],
-
-     // );
   }
 }

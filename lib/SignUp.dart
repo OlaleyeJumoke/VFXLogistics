@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vfxlogistics/Designs/TextFieldDesign.dart';
+import 'package:vfxlogistics/LogIn.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -58,10 +59,11 @@ class _SignUpState extends State<SignUp> {
               children: [
                 Text("Already have an account?", style: Theme.of(context).textTheme.body2.apply(color: Colors.black),),
                 SizedBox(width: 4.0,),
-                Text("Sign in", style: Theme.of(context).textTheme.body2.apply(color: Theme.of(context).primaryColor),),
 
-              ])
-
+                GestureDetector(onTap: ()=> Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LogIn())),
+                    child: Text("Sign in", style: Theme.of(context).textTheme.body2.apply(color: Theme.of(context).primaryColor),)),
+              ]
+          )
         ],
       ),
     ));
