@@ -22,7 +22,7 @@ class Button extends StatelessWidget {
         child: Text(text, style: Theme
             .of(context)
             .textTheme
-            .display4
+            .headline4
             .apply(color: Colors.white),),),
     );
   }

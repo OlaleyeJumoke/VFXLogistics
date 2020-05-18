@@ -5,6 +5,7 @@ import 'package:vfxlogistics/SignUp.dart';
 
 import 'CustomDesigns/Button.dart';
 import 'CustomDesigns/TextFieldDesign.dart';
+import 'Home.dart';
 
 class LogIn extends StatefulWidget {
   @override
@@ -12,7 +13,6 @@ class LogIn extends StatefulWidget {
 }
 
 class _LogInState extends State<LogIn> {
-
   TextEditingController password = TextEditingController();
   TextEditingController username = TextEditingController();
 
@@ -33,21 +33,36 @@ class _LogInState extends State<LogIn> {
         child: Column(
           children: <Widget>[
             SizedBox(height: 28.0),
-            Image.asset("assets/Logo.png",width: 120.0, height: 100.0,),
-            Container(width: 230.0, height: 230.0, alignment: Alignment.center,
+            Image.asset(
+              "assets/Logo.png",
+              width: 120.0,
+              height: 100.0,
+            ),
+            Container(
+                width: 230.0,
+                height: 230.0,
+                alignment: Alignment.center,
                 child: Stack(
                   children: <Widget>[
                     Container(
-
                       child: Image.asset(
-                        "assets/LogIn.png", fit: BoxFit.cover,),),
-                    Positioned(child: Text("VXF LOGISTICS", style: Theme
-                        .of(context)
-                        .textTheme
-                        .subtitle,textAlign: TextAlign.center,),
-                      height: 32.0, left: 8.0,right: 8.0,
+                        "assets/LogIn.png",
+                        fit: BoxFit.cover,
+                      ),
                     ),
-
+                    Positioned(
+                      child: Text(
+                        "VXF LOGISTICS",
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .subtitle1,
+                        textAlign: TextAlign.center,
+                      ),
+                      height: 32.0,
+                      left: 8.0,
+                      right: 8.0,
+                    ),
                   ],
                 )),
 
@@ -61,55 +76,95 @@ class _LogInState extends State<LogIn> {
                   .size
                   .width,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(18.0),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(18.0),
                     topRight: Radius.circular(18.0)),
-                color: const Color(0xfffFAFAFA),),
-              child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                color: const Color(0xfffFAFAFA),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Text("Welcome Back",
+                  Text(
+                    "Welcome Back",
                     style: Theme
                         .of(context)
                         .textTheme
-                        .display2
-                        .apply(color:  const Color(0xff191919)),
-                    textAlign: TextAlign.center,),
+                        .headline2
+                        .apply(color: const Color(0xff191919)),
+                    textAlign: TextAlign.center,
+                  ),
                   SizedBox(height: 12.0),
-                  TextFieldDesign(username, TextInputType.text, true,
-                      "Username or Phone Number"),
                   TextFieldDesign(
-                      password, TextInputType.text, true, "Password"),
-
+                    username,
+                    TextInputType.text,
+                    false,
+                    "Username or Phone Number",
+                    EdgeInsets.only(
+                        top: 4.0, bottom: 4.0, left: 8.0, right: 8.0),
+                  ),
+                  TextFieldDesign(
+                    password,
+                    TextInputType.text,
+                    true,
+                    "Password",
+                    EdgeInsets.only(
+                        top: 4.0, bottom: 4.0, left: 8.0, right: 8.0),
+                  ),
                   Container(
                     margin: EdgeInsets.only(bottom: 4.0, left: 8.0, right: 8.0),
-                    child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+                    child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(child: GestureDetector(onTap: (){
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ForgetPassword()));
-                          },
-                            child: Text("Forget password?",
+                          Expanded(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ForgetPassword()));
+                                },
+                                child: Text(
+                                  "Forget password?",
+                                  style:
+                                  Theme
+                                      .of(context)
+                                      .textTheme
+                                      .bodyText2
+                                      .apply(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              )),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SignUp()));
+                            },
+                            child: Text(
+                              "Sign Up",
                               style: Theme
                                   .of(context)
                                   .textTheme
-                                  .subhead
-                                  .apply(color: Colors.black,),),
-                          )),
-                          GestureDetector(onTap: (){
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignUp()));
-                          },
-                            child: Text("Sign Up", style: Theme
-                                .of(context)
-                                .textTheme
-                                .subhead
-                                .apply(color: Theme
-                                .of(context)
-                                .primaryColor),),
+                                  .bodyText2
+                                  .apply(color: Theme
+                                  .of(context)
+                                  .primaryColor),
+                            ),
                           ),
                         ]),
                   ),
-                  SizedBox(height: 24.0,),
-                  Button("CREATE", (){}),
+                  SizedBox(
+                    height: 24.0,
+                  ),
+                  Button("SIGN IN", () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => Home()));
+                  }),
                 ],
               ),
             ),

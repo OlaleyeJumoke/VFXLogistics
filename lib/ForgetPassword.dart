@@ -32,7 +32,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               style: Theme
                   .of(context)
                   .textTheme
-                  .display2
+                  .headline2
                   .apply(color: const Color(0xff191919)),
               textAlign: TextAlign.start,),
           ),
@@ -41,7 +41,9 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               style: TextStyle(fontSize: 14, fontFamily: 'OpenSans', color: Color(0xFF4D4D4D)),
             ),
           ),
-          TextFieldDesign(value, TextInputType.numberWithOptions(), false, "Phone Number or Email"),
+          TextFieldDesign(value, TextInputType.numberWithOptions(), false,
+            "Phone Number or Email",
+            EdgeInsets.only(top: 4.0, bottom: 4.0, left: 8.0, right: 8.0),),
           Button("RESET", null)
         ],
       ),

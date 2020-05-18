@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import 'package:intro_slider/dot_animation_enum.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
+import 'package:vfxlogistics/CustomDesigns/Button.dart';
 import 'package:vfxlogistics/LogIn.dart';
 import 'package:vfxlogistics/SignUp.dart';
 
@@ -51,25 +52,29 @@ class _OnBoardingState extends State<OnBoarding> {
   Widget signInAndSignUpButtons(){
     return Column(
       children: <Widget>[
-        SizedBox(height: 8.0,),
         Container(
           width: double.infinity,
-          margin: EdgeInsets.only(left: 8.0, right: 8.0),
-          decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4.0)),
-            color: Theme.of(context).primaryColor,),
-          child: FlatButton( onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LogIn()));},
-            child: Text("LOGIN", style: Theme.of(context).textTheme.display4.apply(color: Colors.white),),),
+            //margin: EdgeInsets.only(),
+            child: Button("LOGIN", () {
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => LogIn()));
+            },)
+
+          /* FlatButton( onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LogIn()));},
+            child: Text("LOGIN", style: Theme.of(context).textTheme.display4.apply(color: Colors.white),),),*/
         ),
-        SizedBox(height: 4.0,),
         Container(
           width: double.infinity,
-          margin: EdgeInsets.only(left: 8.0, right: 8.0),
+          margin: EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0),
           decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4.0)),
             color: Theme.of(context).highlightColor,),
           child: FlatButton(onPressed: ( ){
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignUp()));
           },
-            child: Text("SIGN UP", style: Theme.of(context).textTheme.display4
+            child: Text("SIGN UP", style: Theme
+                .of(context)
+                .textTheme
+                .headline4
                 .apply(color: const Color(0xff114B5F)),),),
         ),
         SizedBox(height: 4.0,),
