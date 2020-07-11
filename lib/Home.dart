@@ -63,7 +63,7 @@ class _HomeState extends State<Home> {
                   child: TextFieldDesign(
                     trackingNum,
                     TextInputType.text,
-                    true,
+                    false,
                     "Tracking Number",
                     EdgeInsets.only(left: 8.0, right: 4.0),
                   ),
