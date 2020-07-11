@@ -3,7 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vfxlogistics/LogIn.dart';
 import 'package:vfxlogistics/OnBoarding.dart';
 
-
 int onBoardCount;
 
 void main() async {
@@ -15,46 +14,60 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
- static  const signIn = const Color(0xff114B5F);
+  static const signIn = const Color(0XFF114B5F);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: const Color(0xff1A936F),
-        highlightColor: Colors.white,
-        //primarySwatch: Colors.teal,
-          scaffoldBackgroundColor: const Color(0xFFE5E5E5),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primaryColor: const Color(0XFF1A936F),
+          highlightColor: Color(0XFFFFFFFF),
+          //primarySwatch: Colors.teal,
+          scaffoldBackgroundColor: const Color(0XFFE5E5E5),
           textTheme: TextTheme(
-              headline1: TextStyle(fontSize: 30,
+              headline1: TextStyle(
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'OpenSans',
                   color: Colors.black54),
-              headline2: TextStyle(fontSize: 18,
+              headline2: TextStyle(
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'OpenSans'),
               headline3: TextStyle(fontSize: 16, fontFamily: 'OpenSans'),
-              headline4: TextStyle(fontSize: 14,
+              headline4: TextStyle(
+                fontSize: 14,
                 fontFamily: 'OpenSans',
-                fontWeight: FontWeight.bold,),
-              subtitle1: TextStyle(fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+              subtitle1: TextStyle(
+                  fontSize: 22,
                   fontFamily: 'OpenSans',
                   fontWeight: FontWeight.w300,
                   color: Colors.white),
-              subtitle2: TextStyle(fontSize: 14,
+              subtitle2: TextStyle(
+                  fontSize: 14,
                   fontFamily: 'Montserrat',
                   color: Color(0xffB2B2B2)),
               bodyText1: TextStyle(fontSize: 12, fontFamily: 'OpenSans'),
-              bodyText2: TextStyle(fontSize: 12,
+              bodyText2: TextStyle(
+                  fontSize: 12,
                   fontFamily: 'OpenSans',
-                  fontWeight: FontWeight.bold)
-          ),
-      ),
-        initialRoute: onBoardCount == 0 || onBoardCount == null
-            ? 'onBoarding'
-            : 'LogIn',
-        routes: { "onBoarding": (context) => OnBoarding(),
-          "LogIn": (context) => LogIn()}
-    );
+                  fontWeight: FontWeight.bold),
+              headline5: TextStyle(
+                  fontSize: 24,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w800, color: Color(0XFFFFFFFF)),
+              headline6: TextStyle(
+                  fontSize: 24,
+                  fontFamily: 'Montserrat', color: Color(0XFFFFFFFF))),
+                  
+        ),
+        initialRoute:
+            onBoardCount == 0 || onBoardCount == null ? 'onBoarding' : 'LogIn',
+        routes: {
+          "onBoarding": (context) => OnBoarding(),
+          "LogIn": (context) => LogIn()
+        });
   }
 }

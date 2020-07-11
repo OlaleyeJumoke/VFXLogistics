@@ -107,13 +107,17 @@ class _HomeState extends State<Home> {
           Positioned(
               bottom: 130.0,
               left: 12.0,
-              child: Text(
-                "Track \n your Shipment",
-                style: TextStyle(
-                    fontSize: 24,
-                    fontFamily: 'Montserrat',
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
+              child: RichText(
+                text: TextSpan(
+                  text: 'Track \n',
+                  style: Theme.of(context).textTheme.headline5,
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: 'your',
+                        style: Theme.of(context).textTheme.headline6),
+                    TextSpan(text: ' Shipment',style: Theme.of(context).textTheme.headline5,),
+                  ],
+                ),
               )),
         ],
       ),
